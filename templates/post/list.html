@@ -27,6 +27,13 @@
                     <td>{{ post.title }}</td>
                     <td>{{ post.writer }}</td>
                     <td>{{ post.created_at }}</td>
+
+                    <td>
+                    <form action="/post/delete" method="post" onsubmit="return confirm('정말 삭제하시겠습니까?');">
+                    <input type="hidden" name="num" value="{{ post.num }}">
+                    <button type="submit">삭제</button>
+                    </form>
+                    </td>               
                 </tr>
                 {% endfor %} {# 반복문의 끝을 명시합니다 #}
             </tbody>
